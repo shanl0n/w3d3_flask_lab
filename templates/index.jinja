@@ -1,0 +1,34 @@
+{% extends 'base.jinja' %} {% block content %}
+    <h1>Events List</h1>
+    <form action="/events" method="post">
+        <label for="name">Event Name:</label>
+        <input type="text" id="name" name="name">
+<!-- name in label for= and input id=  relates the two things to each other -->
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date">
+
+        <label for="location">location</label>
+        <input type="location" id="location" name="location">
+
+        <label for="num_of_guests">number of guests</label>
+        <input type="number" id="num_of_guests" name="number_of_guests">
+
+        <label for="description">Description</label>
+        <input class="description" type="description" name="description" id="description" textarea name="description" 
+        id="description" cols="30" rows="10" placeholder="Enter a description"></textarea>
+
+        <input type="submit" value="save">
+
+        <label for="recurring">Is this a recurring event?</label>
+    <input type="checkbox" name="recurring" id="recurring" value="off">
+    </form>
+    <ul>
+        {% for event in event_list  %}
+            <li>{{ event.name }} at  {{ event.location }} on {{ event.date }}
+            {% if event.recurring %}
+                <div> This event is recurring</div>
+            {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

@@ -1,0 +1,21 @@
+* {
+	background-color: rgba(41, 127, 7, 0.44);
+}
+
+h1 {
+	display: flex;
+	justify-content: center;
+}
+
+ul {
+	color: rgb(255, 255, 255);
+	padding-left: 100px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.description {
+	color: rgb(0, 0, 0);
+	background-color: rgb(255, 255, 255);
+}
